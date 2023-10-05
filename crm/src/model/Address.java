@@ -1,6 +1,8 @@
-public class Address {
+package model;
 
-    private String state;
+public final class Address extends BaseEntity{
+
+    private String country;
     private String city;
     private String region;
     private String district;
@@ -9,20 +11,21 @@ public class Address {
     public Address() {
     }
 
-    public Address(String state, String city, String region, String district, String apartment) {
-        this.state = state;
+    public Address(Long id, String country, String city, String region, String district, String apartment) {
+        super(id);
+        this.country = country;
         this.city = city;
         this.region = region;
         this.district = district;
         this.apartment = apartment;
     }
 
-    public String getState() {
-        return state;
+    public String getCountry() {
+        return country;
     }
 
-    public void setState(String state) {
-        this.state = state;
+    public void setCountry(String country) {
+        this.country = country;
     }
 
     public String getCity() {
@@ -60,11 +63,13 @@ public class Address {
     @Override
     public String toString() {
         return "Address{" +
-                "state='" + state + '\'' +
+                "country='" + country + '\'' +
                 ", city='" + city + '\'' +
                 ", region='" + region + '\'' +
                 ", district='" + district + '\'' +
                 ", apartment='" + apartment + '\'' +
+                ", id=" + id +
+                ", dateCreated=" + dateCreated +
                 '}';
     }
 }
