@@ -3,24 +3,14 @@ package model;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
-public final class Student extends User{
+public final class Student{
 
-    //private Group group;
-
-
-    public Student() {
-    }
-
-    @Override
-    public String toString() {
-        return "Student{" +
-                "firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", email='" + email + '\'' +
-                ", phoneNumber='" + phoneNumber + '\'' +
-                ", dob=" + dob +
-                ", id=" + id +
-                ", dateCreated=" + dateCreated +
-                '}';
-    }
+    private Long id;
+    private LocalDateTime dateCreated;
+    private String firstName;
+    private String lastName;
+    private String email;
+    private String phoneNumber;
+    private LocalDate dob;
+    private Group group;
 }

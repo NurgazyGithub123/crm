@@ -1,22 +1,21 @@
 package dao;
 
-import model.Student;
+import model.Manager;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public abstract interface CrudDao<Model> {
-
-    default Connection getConnection() throws SQLException {
-        final String URL = "jdbc:postgresql://localhost:5432/crm";
-        final String USERNAME = "postgres";
-        final String PASSWORD = "123";
-
-        return DriverManager.getConnection(URL, USERNAME, PASSWORD);
-    }
+public interface CrudDao <Model>{
 
     Model save(Model model);
-    Model findById(Long id);
-    void findByAll();
+    Model findByid(Long id);
+    default Connection getConnection() throws SQLException {
+        final String URL = "jdbc:postgresql://localhost:5432/crm";
+        final String USER = "postgres";
+        final String PASSWORD = "1234";
+
+        return DriverManager.getConnection(URL, USER, PASSWORD);
+    }
+
 }
